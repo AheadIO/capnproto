@@ -28,7 +28,12 @@
 #include <limits>
 #include <set>
 #include <chrono>
+
+#if _WIN32
+
+#else
 #include <poll.h>
+#endif
 
 namespace kj {
 

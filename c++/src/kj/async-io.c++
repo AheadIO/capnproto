@@ -25,20 +25,29 @@
 #include "thread.h"
 #include "io.h"
 #include <unistd.h>
+
+#if _WIN32
+
+#else
 #include <sys/uio.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <netinet/in.h>
 #include <netinet/tcp.h>
-#include <stddef.h>
-#include <stdlib.h>
 #include <arpa/inet.h>
 #include <netdb.h>
-#include <set>
 #include <poll.h>
+#endif
+
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/types.h>
+
+#include <stddef.h>
+#include <stdlib.h>
+
+#include <set>
+
 
 namespace kj {
 
