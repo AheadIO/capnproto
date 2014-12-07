@@ -27,6 +27,8 @@
 #include <unistd.h>
 
 #if _WIN32
+#include <windows.h>
+#include <Mswsock.h>
 
 #else
 #include <sys/uio.h>

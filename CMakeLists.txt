@@ -22,5 +22,4 @@ set(LIB_INSTALL_DIR "${EXEC_INSTALL_PREFIX}/lib"
 set(INCLUDE_INSTALL_DIR "${EXEC_INSTALL_PREFIX}/include"
   CACHE PATH "Installation directory for header files (default: prefix/include)."
 )
-
 add_subdirectory(c++)

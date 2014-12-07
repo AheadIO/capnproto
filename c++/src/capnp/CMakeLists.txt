@@ -76,10 +76,12 @@ set(capnp-rpc_headers
   ez-rpc.h
 )
 if(NOT CAPNP_LITE)
+if(NOT WIN32) # FIXME: see (kj-async is not perted on msys2 yet)
   add_library(capnp-rpc ${capnp-rpc_sources})
   target_link_libraries(capnp-rpc kj-async kj)
   install(TARGETS capnp-rpc ARCHIVE DESTINATION "${LIB_INSTALL_DIR}")
   install(FILES ${capnp-rpc_headers} DESTINATION "${INCLUDE_INSTALL_DIR}/capnp")
+endif()
 endif()
 
 # Tools/Compilers ==============================================================

@@ -69,10 +69,12 @@ set(kj-async_headers
   time.h
 )
 if(NOT CAPNP_LITE)
+if(NOT WIN32) # FIXME: kj-async is not perted on msys2 yet
   add_library(kj-async ${kj-async_sources})
   target_link_libraries(kj-async kj)
   install(TARGETS kj-async ARCHIVE DESTINATION "${LIB_INSTALL_DIR}")
   install(FILES ${kj-async_headers} DESTINATION "${INCLUDE_INSTALL_DIR}/kj")
+endif()
 endif()
 
 # Tests ========================================================================
